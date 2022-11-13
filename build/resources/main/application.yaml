@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://komuchart-db.coif4echhixl.ap-northeast-1.rds.amazonaws.com:3306/komuchart
+    username: gyeongahna
+    password: luckyone77!
+
+#      datasource:
+#        #    url: jdbc:h2:tcp://localhost/~/KoreaMusicChart;
+#        url: jdbc:mysql://komuchart-db.coif4echhixl.ap-northeast-1.rds.amazonaws.com:3306/komuchart
+#        username: sa
+#        password:
+#        driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+#    ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        default_batch_fetch_size: 1000
+
+logging:
+  level:
+    org.hibernate.SQL: debug

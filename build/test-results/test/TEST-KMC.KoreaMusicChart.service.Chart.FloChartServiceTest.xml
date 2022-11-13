@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="KMC.KoreaMusicChart.service.Chart.FloChartServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-11-13T06:16:26" hostname="nagyeong-aui-MacBookPro.local" time="4.489">
+  <properties/>
+  <testcase name="차트_중복_예외" classname="KMC.KoreaMusicChart.service.Chart.FloChartServiceTest" time="1.049"/>
+  <testcase name="날짜와_시각으로_차트정보_조회" classname="KMC.KoreaMusicChart.service.Chart.FloChartServiceTest" time="2.818"/>
+  <testcase name="차트정보저장" classname="KMC.KoreaMusicChart.service.Chart.FloChartServiceTest" time="0.621"/>
+  <system-out><![CDATA[2022-11-13 15:16:26.170  INFO 41132 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@719e8f9f testClass = FloChartServiceTest, testInstance = KMC.KoreaMusicChart.service.Chart.FloChartServiceTest@5122387, testMethod = 차트_중복_예외@FloChartServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@9abbe39 testClass = FloChartServiceTest, locations = '{}', classes = '{class KMC.KoreaMusicChart.KoreaMusicChartApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4212a0c8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4189d70b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@320de594, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2974f221, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5dd91bca, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2eea88a1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@294b045b]; rollback [true]
+2022-11-13 15:16:26.172 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flosong0_.flo_song_id as flo_song1_7_,
+        flosong0_.album as album2_7_,
+        flosong0_.flo_id as flo_id3_7_,
+        flosong0_.image_url as image_ur4_7_,
+        flosong0_.name as name5_7_ 
+    from
+        flo_song flosong0_ 
+    where
+        flosong0_.name=? 
+        and flosong0_.album=?
+2022-11-13 15:16:26.257 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:26.298 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:26.425 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        flo_song
+        (album, flo_id, image_url, name, flo_song_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:26.467 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flosong0_.flo_song_id as flo_song1_7_,
+        flosong0_.album as album2_7_,
+        flosong0_.flo_id as flo_id3_7_,
+        flosong0_.image_url as image_ur4_7_,
+        flosong0_.name as name5_7_ 
+    from
+        flo_song flosong0_ 
+    where
+        flosong0_.name=? 
+        and flosong0_.album=?
+2022-11-13 15:16:26.548 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:26.590 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:26.724 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flochart0_.flo_chart_id as flo_char1_6_,
+        flochart0_.cur_rank as cur_rank2_6_,
+        flochart0_.date_time as date_tim3_6_,
+        flochart0_.flo_song_id as flo_song5_6_,
+        flochart0_.prev_rank as prev_ran4_6_ 
+    from
+        flo_chart flochart0_ 
+    where
+        flochart0_.date_time=? 
+        and flochart0_.cur_rank=?
+2022-11-13 15:16:26.805 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:26.845 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:26.973 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        flo_song
+        (album, flo_id, image_url, name, flo_song_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:27.012 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        flo_chart
+        (cur_rank, date_time, flo_song_id, prev_rank, flo_chart_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:27.053 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flochart0_.flo_chart_id as flo_char1_6_,
+        flochart0_.cur_rank as cur_rank2_6_,
+        flochart0_.date_time as date_tim3_6_,
+        flochart0_.flo_song_id as flo_song5_6_,
+        flochart0_.prev_rank as prev_ran4_6_ 
+    from
+        flo_chart flochart0_ 
+    where
+        flochart0_.date_time=? 
+        and flochart0_.cur_rank=?
+2022-11-13 15:16:27.179  INFO 41132 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@719e8f9f testClass = FloChartServiceTest, testInstance = KMC.KoreaMusicChart.service.Chart.FloChartServiceTest@5122387, testMethod = 차트_중복_예외@FloChartServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@9abbe39 testClass = FloChartServiceTest, locations = '{}', classes = '{class KMC.KoreaMusicChart.KoreaMusicChartApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4212a0c8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4189d70b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@320de594, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2974f221, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5dd91bca, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2eea88a1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+2022-11-13 15:16:27.221  INFO 41132 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@719e8f9f testClass = FloChartServiceTest, testInstance = KMC.KoreaMusicChart.service.Chart.FloChartServiceTest@2250deae, testMethod = 날짜와_시각으로_차트정보_조회@FloChartServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@9abbe39 testClass = FloChartServiceTest, locations = '{}', classes = '{class KMC.KoreaMusicChart.KoreaMusicChartApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4212a0c8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4189d70b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@320de594, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2974f221, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5dd91bca, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2eea88a1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@294b045b]; rollback [true]
+2022-11-13 15:16:27.222 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flosong0_.flo_song_id as flo_song1_7_,
+        flosong0_.album as album2_7_,
+        flosong0_.flo_id as flo_id3_7_,
+        flosong0_.image_url as image_ur4_7_,
+        flosong0_.name as name5_7_ 
+    from
+        flo_song flosong0_ 
+    where
+        flosong0_.name=? 
+        and flosong0_.album=?
+2022-11-13 15:16:27.302 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:27.344 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:27.471 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        flo_song
+        (album, flo_id, image_url, name, flo_song_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:27.510 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flosong0_.flo_song_id as flo_song1_7_,
+        flosong0_.album as album2_7_,
+        flosong0_.flo_id as flo_id3_7_,
+        flosong0_.image_url as image_ur4_7_,
+        flosong0_.name as name5_7_ 
+    from
+        flo_song flosong0_ 
+    where
+        flosong0_.name=? 
+        and flosong0_.album=?
+2022-11-13 15:16:27.590 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:27.630 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:27.758 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        flo_song
+        (album, flo_id, image_url, name, flo_song_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:27.797 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flosong0_.flo_song_id as flo_song1_7_,
+        flosong0_.album as album2_7_,
+        flosong0_.flo_id as flo_id3_7_,
+        flosong0_.image_url as image_ur4_7_,
+        flosong0_.name as name5_7_ 
+    from
+        flo_song flosong0_ 
+    where
+        flosong0_.name=? 
+        and flosong0_.album=?
+2022-11-13 15:16:27.878 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:27.920 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:28.048 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        flo_song
+        (album, flo_id, image_url, name, flo_song_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:28.088 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flosong0_.flo_song_id as flo_song1_7_,
+        flosong0_.album as album2_7_,
+        flosong0_.flo_id as flo_id3_7_,
+        flosong0_.image_url as image_ur4_7_,
+        flosong0_.name as name5_7_ 
+    from
+        flo_song flosong0_ 
+    where
+        flosong0_.name=? 
+        and flosong0_.album=?
+2022-11-13 15:16:28.168 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:28.209 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:28.337 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flochart0_.flo_chart_id as flo_char1_6_,
+        flochart0_.cur_rank as cur_rank2_6_,
+        flochart0_.date_time as date_tim3_6_,
+        flochart0_.flo_song_id as flo_song5_6_,
+        flochart0_.prev_rank as prev_ran4_6_ 
+    from
+        flo_chart flochart0_ 
+    where
+        flochart0_.date_time=? 
+        and flochart0_.cur_rank=?
+2022-11-13 15:16:28.420 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:28.460 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:28.587 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        flo_song
+        (album, flo_id, image_url, name, flo_song_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:28.628 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        flo_chart
+        (cur_rank, date_time, flo_song_id, prev_rank, flo_chart_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:28.668 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flochart0_.flo_chart_id as flo_char1_6_,
+        flochart0_.cur_rank as cur_rank2_6_,
+        flochart0_.date_time as date_tim3_6_,
+        flochart0_.flo_song_id as flo_song5_6_,
+        flochart0_.prev_rank as prev_ran4_6_ 
+    from
+        flo_chart flochart0_ 
+    where
+        flochart0_.date_time=? 
+        and flochart0_.cur_rank=?
+2022-11-13 15:16:28.749 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:28.790 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:28.918 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        flo_chart
+        (cur_rank, date_time, flo_song_id, prev_rank, flo_chart_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:28.959 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flochart0_.flo_chart_id as flo_char1_6_,
+        flochart0_.cur_rank as cur_rank2_6_,
+        flochart0_.date_time as date_tim3_6_,
+        flochart0_.flo_song_id as flo_song5_6_,
+        flochart0_.prev_rank as prev_ran4_6_ 
+    from
+        flo_chart flochart0_ 
+    where
+        flochart0_.date_time=? 
+        and flochart0_.cur_rank=?
+2022-11-13 15:16:29.039 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:29.079 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:29.206 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        flo_chart
+        (cur_rank, date_time, flo_song_id, prev_rank, flo_chart_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:29.246 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flochart0_.flo_chart_id as flo_char1_6_,
+        flochart0_.cur_rank as cur_rank2_6_,
+        flochart0_.date_time as date_tim3_6_,
+        flochart0_.flo_song_id as flo_song5_6_,
+        flochart0_.prev_rank as prev_ran4_6_ 
+    from
+        flo_chart flochart0_ 
+    where
+        flochart0_.date_time=? 
+        and flochart0_.cur_rank=?
+2022-11-13 15:16:29.330 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:29.370 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:29.500 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        flo_chart
+        (cur_rank, date_time, flo_song_id, prev_rank, flo_chart_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:29.541 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flochart0_.flo_chart_id as flo_char1_6_,
+        flochart0_.cur_rank as cur_rank2_6_,
+        flochart0_.date_time as date_tim3_6_,
+        flochart0_.flo_song_id as flo_song5_6_,
+        flochart0_.prev_rank as prev_ran4_6_ 
+    from
+        flo_chart flochart0_ 
+    where
+        flochart0_.date_time=? 
+        and flochart0_.cur_rank=?
+2022-11-13 15:16:29.621 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:29.661 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:29.791 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        flo_chart
+        (cur_rank, date_time, flo_song_id, prev_rank, flo_chart_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:29.831 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flochart0_.flo_chart_id as flo_char1_6_,
+        flochart0_.cur_rank as cur_rank2_6_,
+        flochart0_.date_time as date_tim3_6_,
+        flochart0_.flo_song_id as flo_song5_6_,
+        flochart0_.prev_rank as prev_ran4_6_ 
+    from
+        flo_chart flochart0_ 
+    where
+        flochart0_.date_time=?
+2022-11-13 15:16:29.873 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flochart0_.flo_chart_id as flo_char1_6_,
+        flochart0_.cur_rank as cur_rank2_6_,
+        flochart0_.date_time as date_tim3_6_,
+        flochart0_.flo_song_id as flo_song5_6_,
+        flochart0_.prev_rank as prev_ran4_6_ 
+    from
+        flo_chart flochart0_ 
+    where
+        flochart0_.date_time=?
+2022-11-13 15:16:29.996  INFO 41132 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@719e8f9f testClass = FloChartServiceTest, testInstance = KMC.KoreaMusicChart.service.Chart.FloChartServiceTest@2250deae, testMethod = 날짜와_시각으로_차트정보_조회@FloChartServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@9abbe39 testClass = FloChartServiceTest, locations = '{}', classes = '{class KMC.KoreaMusicChart.KoreaMusicChartApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4212a0c8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4189d70b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@320de594, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2974f221, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5dd91bca, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2eea88a1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+2022-11-13 15:16:30.038  INFO 41132 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@719e8f9f testClass = FloChartServiceTest, testInstance = KMC.KoreaMusicChart.service.Chart.FloChartServiceTest@5bbf8daa, testMethod = 차트정보저장@FloChartServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@9abbe39 testClass = FloChartServiceTest, locations = '{}', classes = '{class KMC.KoreaMusicChart.KoreaMusicChartApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4212a0c8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4189d70b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@320de594, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2974f221, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5dd91bca, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2eea88a1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@294b045b]; rollback [true]
+2022-11-13 15:16:30.039 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flosong0_.flo_song_id as flo_song1_7_,
+        flosong0_.album as album2_7_,
+        flosong0_.flo_id as flo_id3_7_,
+        flosong0_.image_url as image_ur4_7_,
+        flosong0_.name as name5_7_ 
+    from
+        flo_song flosong0_ 
+    where
+        flosong0_.name=? 
+        and flosong0_.album=?
+2022-11-13 15:16:30.120 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:30.161 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:30.289 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flochart0_.flo_chart_id as flo_char1_6_,
+        flochart0_.cur_rank as cur_rank2_6_,
+        flochart0_.date_time as date_tim3_6_,
+        flochart0_.flo_song_id as flo_song5_6_,
+        flochart0_.prev_rank as prev_ran4_6_ 
+    from
+        flo_chart flochart0_ 
+    where
+        flochart0_.date_time=? 
+        and flochart0_.cur_rank=?
+2022-11-13 15:16:30.370 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:30.410 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:30.618  INFO 41132 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@719e8f9f testClass = FloChartServiceTest, testInstance = KMC.KoreaMusicChart.service.Chart.FloChartServiceTest@5bbf8daa, testMethod = 차트정보저장@FloChartServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@9abbe39 testClass = FloChartServiceTest, locations = '{}', classes = '{class KMC.KoreaMusicChart.KoreaMusicChartApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4212a0c8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4189d70b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@320de594, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2974f221, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5dd91bca, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2eea88a1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

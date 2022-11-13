@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="KMC.KoreaMusicChart.service.Song.FloSongServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-11-13T06:16:41" hostname="nagyeong-aui-MacBookPro.local" time="1.578">
+  <properties/>
+  <testcase name="곡등록" classname="KMC.KoreaMusicChart.service.Song.FloSongServiceTest" time="0.372"/>
+  <testcase name="이름과앨범으로찾기" classname="KMC.KoreaMusicChart.service.Song.FloSongServiceTest" time="0.747"/>
+  <testcase name="중복_곡_예외" classname="KMC.KoreaMusicChart.service.Song.FloSongServiceTest" time="0.458"/>
+  <system-out><![CDATA[2022-11-13 15:16:41.523  INFO 41132 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@10007fdc testClass = FloSongServiceTest, testInstance = KMC.KoreaMusicChart.service.Song.FloSongServiceTest@7ca0aa55, testMethod = 곡등록@FloSongServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@51a8aed8 testClass = FloSongServiceTest, locations = '{}', classes = '{class KMC.KoreaMusicChart.KoreaMusicChartApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4212a0c8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4189d70b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@320de594, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2974f221, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5dd91bca, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2eea88a1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@294b045b]; rollback [true]
+2022-11-13 15:16:41.525 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flosong0_.flo_song_id as flo_song1_7_,
+        flosong0_.album as album2_7_,
+        flosong0_.flo_id as flo_id3_7_,
+        flosong0_.image_url as image_ur4_7_,
+        flosong0_.name as name5_7_ 
+    from
+        flo_song flosong0_ 
+    where
+        flosong0_.name=? 
+        and flosong0_.album=?
+2022-11-13 15:16:41.604 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:41.645 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:41.854  INFO 41132 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@10007fdc testClass = FloSongServiceTest, testInstance = KMC.KoreaMusicChart.service.Song.FloSongServiceTest@7ca0aa55, testMethod = 곡등록@FloSongServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@51a8aed8 testClass = FloSongServiceTest, locations = '{}', classes = '{class KMC.KoreaMusicChart.KoreaMusicChartApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4212a0c8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4189d70b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@320de594, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2974f221, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5dd91bca, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2eea88a1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+2022-11-13 15:16:41.895  INFO 41132 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@10007fdc testClass = FloSongServiceTest, testInstance = KMC.KoreaMusicChart.service.Song.FloSongServiceTest@58c48a23, testMethod = 이름과앨범으로찾기@FloSongServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@51a8aed8 testClass = FloSongServiceTest, locations = '{}', classes = '{class KMC.KoreaMusicChart.KoreaMusicChartApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4212a0c8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4189d70b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@320de594, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2974f221, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5dd91bca, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2eea88a1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@294b045b]; rollback [true]
+2022-11-13 15:16:41.897 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flosong0_.flo_song_id as flo_song1_7_,
+        flosong0_.album as album2_7_,
+        flosong0_.flo_id as flo_id3_7_,
+        flosong0_.image_url as image_ur4_7_,
+        flosong0_.name as name5_7_ 
+    from
+        flo_song flosong0_ 
+    where
+        flosong0_.name=? 
+        and flosong0_.album=?
+2022-11-13 15:16:41.977 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:42.017 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:42.147 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        flo_song
+        (album, flo_id, image_url, name, flo_song_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:42.187 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flosong0_.flo_song_id as flo_song1_7_,
+        flosong0_.album as album2_7_,
+        flosong0_.flo_id as flo_id3_7_,
+        flosong0_.image_url as image_ur4_7_,
+        flosong0_.name as name5_7_ 
+    from
+        flo_song flosong0_ 
+    where
+        flosong0_.name=? 
+        and flosong0_.album=?
+2022-11-13 15:16:42.267 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:42.307 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:42.435 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        flo_song
+        (album, flo_id, image_url, name, flo_song_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:42.474 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flosong0_.flo_song_id as flo_song1_7_,
+        flosong0_.album as album2_7_,
+        flosong0_.flo_id as flo_id3_7_,
+        flosong0_.image_url as image_ur4_7_,
+        flosong0_.name as name5_7_ 
+    from
+        flo_song flosong0_ 
+    where
+        flosong0_.name=? 
+        and flosong0_.album=?
+2022-11-13 15:16:42.601  INFO 41132 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@10007fdc testClass = FloSongServiceTest, testInstance = KMC.KoreaMusicChart.service.Song.FloSongServiceTest@58c48a23, testMethod = 이름과앨범으로찾기@FloSongServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@51a8aed8 testClass = FloSongServiceTest, locations = '{}', classes = '{class KMC.KoreaMusicChart.KoreaMusicChartApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4212a0c8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4189d70b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@320de594, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2974f221, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5dd91bca, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2eea88a1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+2022-11-13 15:16:42.644  INFO 41132 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@10007fdc testClass = FloSongServiceTest, testInstance = KMC.KoreaMusicChart.service.Song.FloSongServiceTest@5a097a83, testMethod = 중복_곡_예외@FloSongServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@51a8aed8 testClass = FloSongServiceTest, locations = '{}', classes = '{class KMC.KoreaMusicChart.KoreaMusicChartApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4212a0c8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4189d70b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@320de594, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2974f221, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5dd91bca, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2eea88a1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@294b045b]; rollback [true]
+2022-11-13 15:16:42.645 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flosong0_.flo_song_id as flo_song1_7_,
+        flosong0_.album as album2_7_,
+        flosong0_.flo_id as flo_id3_7_,
+        flosong0_.image_url as image_ur4_7_,
+        flosong0_.name as name5_7_ 
+    from
+        flo_song flosong0_ 
+    where
+        flosong0_.name=? 
+        and flosong0_.album=?
+2022-11-13 15:16:42.726 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:42.767 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:42.895 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        flo_song
+        (album, flo_id, image_url, name, flo_song_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:42.935 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        flosong0_.flo_song_id as flo_song1_7_,
+        flosong0_.album as album2_7_,
+        flosong0_.flo_id as flo_id3_7_,
+        flosong0_.image_url as image_ur4_7_,
+        flosong0_.name as name5_7_ 
+    from
+        flo_song flosong0_ 
+    where
+        flosong0_.name=? 
+        and flosong0_.album=?
+2022-11-13 15:16:43.059  INFO 41132 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@10007fdc testClass = FloSongServiceTest, testInstance = KMC.KoreaMusicChart.service.Song.FloSongServiceTest@5a097a83, testMethod = 중복_곡_예외@FloSongServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@51a8aed8 testClass = FloSongServiceTest, locations = '{}', classes = '{class KMC.KoreaMusicChart.KoreaMusicChartApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4212a0c8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4189d70b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@320de594, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2974f221, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5dd91bca, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2eea88a1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

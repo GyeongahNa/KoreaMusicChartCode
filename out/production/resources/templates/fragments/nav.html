@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<nav class="navbar navbar-expand-md" th:fragment="nav">
+    <div class="container-box nav-container">
+        <div class="main-logo">
+            <div>
+                <h4>KOREA MUSIC CHART</h4>
+            </div>
+            <div>
+                <span>한국의 실시간 음악 차트를 한번에 확인하기</span>
+            </div>
+        </div>
+        <button aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler" data-bs-target="#navbarCollapse" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="menu navbar-nav mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link active-menu" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">차트분석(준비중)</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+</html>

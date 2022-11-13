@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="KMC.KoreaMusicChart.service.Chart.MelonChartServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-11-13T06:16:35" hostname="nagyeong-aui-MacBookPro.local" time="4.512">
+  <properties/>
+  <testcase name="차트_중복_예외" classname="KMC.KoreaMusicChart.service.Chart.MelonChartServiceTest" time="1.048"/>
+  <testcase name="날짜와_시각으로_차트정보_조회" classname="KMC.KoreaMusicChart.service.Chart.MelonChartServiceTest" time="2.84"/>
+  <testcase name="차트정보저장" classname="KMC.KoreaMusicChart.service.Chart.MelonChartServiceTest" time="0.623"/>
+  <system-out><![CDATA[2022-11-13 15:16:35.426  INFO 41132 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@5eb89000 testClass = MelonChartServiceTest, testInstance = KMC.KoreaMusicChart.service.Chart.MelonChartServiceTest@16b1b213, testMethod = 차트_중복_예외@MelonChartServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@77f1026e testClass = MelonChartServiceTest, locations = '{}', classes = '{class KMC.KoreaMusicChart.KoreaMusicChartApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4212a0c8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4189d70b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@320de594, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2974f221, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5dd91bca, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2eea88a1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@294b045b]; rollback [true]
+2022-11-13 15:16:35.427 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        melonsong0_.melon_song_id as melon_so1_18_,
+        melonsong0_.album as album2_18_,
+        melonsong0_.image_url as image_ur3_18_,
+        melonsong0_.melon_id as melon_id4_18_,
+        melonsong0_.name as name5_18_ 
+    from
+        melon_song melonsong0_ 
+    where
+        melonsong0_.name=? 
+        and melonsong0_.album=?
+2022-11-13 15:16:35.507 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:35.549 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:35.680 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        melon_song
+        (album, image_url, melon_id, name, melon_song_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:35.720 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        melonsong0_.melon_song_id as melon_so1_18_,
+        melonsong0_.album as album2_18_,
+        melonsong0_.image_url as image_ur3_18_,
+        melonsong0_.melon_id as melon_id4_18_,
+        melonsong0_.name as name5_18_ 
+    from
+        melon_song melonsong0_ 
+    where
+        melonsong0_.name=? 
+        and melonsong0_.album=?
+2022-11-13 15:16:35.801 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:35.842 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:35.977 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        melonchart0_.melon_chart_id as melon_ch1_15_,
+        melonchart0_.cur_rank as cur_rank2_15_,
+        melonchart0_.date_time as date_tim3_15_,
+        melonchart0_.melon_song_id as melon_so5_15_,
+        melonchart0_.prev_rank as prev_ran4_15_ 
+    from
+        melon_chart melonchart0_ 
+    where
+        melonchart0_.date_time=? 
+        and melonchart0_.cur_rank=?
+2022-11-13 15:16:36.058 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:36.100 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:36.229 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        melon_song
+        (album, image_url, melon_id, name, melon_song_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:36.268 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        melon_chart
+        (cur_rank, date_time, melon_song_id, prev_rank, melon_chart_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:36.309 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        melonchart0_.melon_chart_id as melon_ch1_15_,
+        melonchart0_.cur_rank as cur_rank2_15_,
+        melonchart0_.date_time as date_tim3_15_,
+        melonchart0_.melon_song_id as melon_so5_15_,
+        melonchart0_.prev_rank as prev_ran4_15_ 
+    from
+        melon_chart melonchart0_ 
+    where
+        melonchart0_.date_time=? 
+        and melonchart0_.cur_rank=?
+2022-11-13 15:16:36.434  INFO 41132 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@5eb89000 testClass = MelonChartServiceTest, testInstance = KMC.KoreaMusicChart.service.Chart.MelonChartServiceTest@16b1b213, testMethod = 차트_중복_예외@MelonChartServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@77f1026e testClass = MelonChartServiceTest, locations = '{}', classes = '{class KMC.KoreaMusicChart.KoreaMusicChartApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4212a0c8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4189d70b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@320de594, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2974f221, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5dd91bca, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2eea88a1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+2022-11-13 15:16:36.475  INFO 41132 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@5eb89000 testClass = MelonChartServiceTest, testInstance = KMC.KoreaMusicChart.service.Chart.MelonChartServiceTest@10806dbe, testMethod = 날짜와_시각으로_차트정보_조회@MelonChartServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@77f1026e testClass = MelonChartServiceTest, locations = '{}', classes = '{class KMC.KoreaMusicChart.KoreaMusicChartApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4212a0c8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4189d70b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@320de594, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2974f221, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5dd91bca, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2eea88a1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@294b045b]; rollback [true]
+2022-11-13 15:16:36.477 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        melonsong0_.melon_song_id as melon_so1_18_,
+        melonsong0_.album as album2_18_,
+        melonsong0_.image_url as image_ur3_18_,
+        melonsong0_.melon_id as melon_id4_18_,
+        melonsong0_.name as name5_18_ 
+    from
+        melon_song melonsong0_ 
+    where
+        melonsong0_.name=? 
+        and melonsong0_.album=?
+2022-11-13 15:16:36.557 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:36.597 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:36.729 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        melon_song
+        (album, image_url, melon_id, name, melon_song_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:36.770 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        melonsong0_.melon_song_id as melon_so1_18_,
+        melonsong0_.album as album2_18_,
+        melonsong0_.image_url as image_ur3_18_,
+        melonsong0_.melon_id as melon_id4_18_,
+        melonsong0_.name as name5_18_ 
+    from
+        melon_song melonsong0_ 
+    where
+        melonsong0_.name=? 
+        and melonsong0_.album=?
+2022-11-13 15:16:36.851 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:36.892 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:37.021 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        melon_song
+        (album, image_url, melon_id, name, melon_song_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:37.061 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        melonsong0_.melon_song_id as melon_so1_18_,
+        melonsong0_.album as album2_18_,
+        melonsong0_.image_url as image_ur3_18_,
+        melonsong0_.melon_id as melon_id4_18_,
+        melonsong0_.name as name5_18_ 
+    from
+        melon_song melonsong0_ 
+    where
+        melonsong0_.name=? 
+        and melonsong0_.album=?
+2022-11-13 15:16:37.142 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:37.183 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:37.312 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        melon_song
+        (album, image_url, melon_id, name, melon_song_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:37.354 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        melonsong0_.melon_song_id as melon_so1_18_,
+        melonsong0_.album as album2_18_,
+        melonsong0_.image_url as image_ur3_18_,
+        melonsong0_.melon_id as melon_id4_18_,
+        melonsong0_.name as name5_18_ 
+    from
+        melon_song melonsong0_ 
+    where
+        melonsong0_.name=? 
+        and melonsong0_.album=?
+2022-11-13 15:16:37.435 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:37.476 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:37.604 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        melonchart0_.melon_chart_id as melon_ch1_15_,
+        melonchart0_.cur_rank as cur_rank2_15_,
+        melonchart0_.date_time as date_tim3_15_,
+        melonchart0_.melon_song_id as melon_so5_15_,
+        melonchart0_.prev_rank as prev_ran4_15_ 
+    from
+        melon_chart melonchart0_ 
+    where
+        melonchart0_.date_time=? 
+        and melonchart0_.cur_rank=?
+2022-11-13 15:16:37.685 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:37.726 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:37.854 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        melon_song
+        (album, image_url, melon_id, name, melon_song_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:37.894 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        melon_chart
+        (cur_rank, date_time, melon_song_id, prev_rank, melon_chart_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:37.935 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        melonchart0_.melon_chart_id as melon_ch1_15_,
+        melonchart0_.cur_rank as cur_rank2_15_,
+        melonchart0_.date_time as date_tim3_15_,
+        melonchart0_.melon_song_id as melon_so5_15_,
+        melonchart0_.prev_rank as prev_ran4_15_ 
+    from
+        melon_chart melonchart0_ 
+    where
+        melonchart0_.date_time=? 
+        and melonchart0_.cur_rank=?
+2022-11-13 15:16:38.017 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:38.058 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:38.185 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        melon_chart
+        (cur_rank, date_time, melon_song_id, prev_rank, melon_chart_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:38.226 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        melonchart0_.melon_chart_id as melon_ch1_15_,
+        melonchart0_.cur_rank as cur_rank2_15_,
+        melonchart0_.date_time as date_tim3_15_,
+        melonchart0_.melon_song_id as melon_so5_15_,
+        melonchart0_.prev_rank as prev_ran4_15_ 
+    from
+        melon_chart melonchart0_ 
+    where
+        melonchart0_.date_time=? 
+        and melonchart0_.cur_rank=?
+2022-11-13 15:16:38.307 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:38.348 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:38.476 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        melon_chart
+        (cur_rank, date_time, melon_song_id, prev_rank, melon_chart_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:38.516 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        melonchart0_.melon_chart_id as melon_ch1_15_,
+        melonchart0_.cur_rank as cur_rank2_15_,
+        melonchart0_.date_time as date_tim3_15_,
+        melonchart0_.melon_song_id as melon_so5_15_,
+        melonchart0_.prev_rank as prev_ran4_15_ 
+    from
+        melon_chart melonchart0_ 
+    where
+        melonchart0_.date_time=? 
+        and melonchart0_.cur_rank=?
+2022-11-13 15:16:38.598 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:38.638 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:38.773 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        melon_chart
+        (cur_rank, date_time, melon_song_id, prev_rank, melon_chart_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:38.812 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        melonchart0_.melon_chart_id as melon_ch1_15_,
+        melonchart0_.cur_rank as cur_rank2_15_,
+        melonchart0_.date_time as date_tim3_15_,
+        melonchart0_.melon_song_id as melon_so5_15_,
+        melonchart0_.prev_rank as prev_ran4_15_ 
+    from
+        melon_chart melonchart0_ 
+    where
+        melonchart0_.date_time=? 
+        and melonchart0_.cur_rank=?
+2022-11-13 15:16:38.893 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:38.934 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:39.068 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        melon_chart
+        (cur_rank, date_time, melon_song_id, prev_rank, melon_chart_id) 
+    values
+        (?, ?, ?, ?, ?)
+2022-11-13 15:16:39.107 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        melonchart0_.melon_chart_id as melon_ch1_15_,
+        melonchart0_.cur_rank as cur_rank2_15_,
+        melonchart0_.date_time as date_tim3_15_,
+        melonchart0_.melon_song_id as melon_so5_15_,
+        melonchart0_.prev_rank as prev_ran4_15_ 
+    from
+        melon_chart melonchart0_ 
+    where
+        melonchart0_.date_time=?
+2022-11-13 15:16:39.150 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        melonchart0_.melon_chart_id as melon_ch1_15_,
+        melonchart0_.cur_rank as cur_rank2_15_,
+        melonchart0_.date_time as date_tim3_15_,
+        melonchart0_.melon_song_id as melon_so5_15_,
+        melonchart0_.prev_rank as prev_ran4_15_ 
+    from
+        melon_chart melonchart0_ 
+    where
+        melonchart0_.date_time=?
+2022-11-13 15:16:39.273  INFO 41132 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@5eb89000 testClass = MelonChartServiceTest, testInstance = KMC.KoreaMusicChart.service.Chart.MelonChartServiceTest@10806dbe, testMethod = 날짜와_시각으로_차트정보_조회@MelonChartServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@77f1026e testClass = MelonChartServiceTest, locations = '{}', classes = '{class KMC.KoreaMusicChart.KoreaMusicChartApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4212a0c8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4189d70b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@320de594, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2974f221, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5dd91bca, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2eea88a1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+2022-11-13 15:16:39.315  INFO 41132 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@5eb89000 testClass = MelonChartServiceTest, testInstance = KMC.KoreaMusicChart.service.Chart.MelonChartServiceTest@2b8a11d7, testMethod = 차트정보저장@MelonChartServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@77f1026e testClass = MelonChartServiceTest, locations = '{}', classes = '{class KMC.KoreaMusicChart.KoreaMusicChartApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4212a0c8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4189d70b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@320de594, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2974f221, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5dd91bca, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2eea88a1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@294b045b]; rollback [true]
+2022-11-13 15:16:39.316 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        melonsong0_.melon_song_id as melon_so1_18_,
+        melonsong0_.album as album2_18_,
+        melonsong0_.image_url as image_ur3_18_,
+        melonsong0_.melon_id as melon_id4_18_,
+        melonsong0_.name as name5_18_ 
+    from
+        melon_song melonsong0_ 
+    where
+        melonsong0_.name=? 
+        and melonsong0_.album=?
+2022-11-13 15:16:39.398 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:39.439 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:39.566 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        melonchart0_.melon_chart_id as melon_ch1_15_,
+        melonchart0_.cur_rank as cur_rank2_15_,
+        melonchart0_.date_time as date_tim3_15_,
+        melonchart0_.melon_song_id as melon_so5_15_,
+        melonchart0_.prev_rank as prev_ran4_15_ 
+    from
+        melon_chart melonchart0_ 
+    where
+        melonchart0_.date_time=? 
+        and melonchart0_.cur_rank=?
+2022-11-13 15:16:39.646 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next_val as id_val 
+    from
+        hibernate_sequence for update
+            
+2022-11-13 15:16:39.686 DEBUG 41132 --- [    Test worker] org.hibernate.SQL                        : 
+    update
+        hibernate_sequence 
+    set
+        next_val= ? 
+    where
+        next_val=?
+2022-11-13 15:16:39.897  INFO 41132 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@5eb89000 testClass = MelonChartServiceTest, testInstance = KMC.KoreaMusicChart.service.Chart.MelonChartServiceTest@2b8a11d7, testMethod = 차트정보저장@MelonChartServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@77f1026e testClass = MelonChartServiceTest, locations = '{}', classes = '{class KMC.KoreaMusicChart.KoreaMusicChartApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4212a0c8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@4189d70b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@320de594, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@2974f221, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@5dd91bca, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@2eea88a1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

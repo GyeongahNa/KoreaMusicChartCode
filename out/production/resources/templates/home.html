@@ -1,0 +1,184 @@
+<!doctype html>
+<html class="h-100" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/head :: head('Korea Music Chart')"></head>
+
+<body class="d-flex flex-column h-100">
+<section class="main-section">
+  <!-- header and nav section-->
+  <section class="header-section">
+    <nav th:replace="fragments/nav ::nav"></nav>
+  </section>
+  <!-- contents section-->
+  <section class="contents-section">
+    <div class="container-box">
+      <div class="wrap-up">
+        <div class="search-box">
+          <input id="search" onkeyup="filter()" placeholder="좋아하는 아티스트나 곡 이름을 검색해보세요" type="text"/>
+        </div>
+        <div class="time-box">
+          <div class="time-info">
+            <span th:text="${nowDate}">현재 날짜</span>
+            <span th:text="${nowTime}">현재 시간</span>
+            <span>KST</span>
+          </div>
+        </div>
+        <div class="chart">
+          <div class="row">
+            <!-- 멜론 차트 -->
+            <div class="col-xl-3 chart-box">
+              <div class="chart-title">
+                <img class="melon-img" th:src="@{/images/melon-logo.png}"></img>
+              </div>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                  <tr class="chart-row" th:each="chart : ${melonCharts}">
+                    <td class="rank-box">
+                      <span class="rank" th:text="${chart.curRank}">1</span>
+                    </td>
+                    <td class="img-box">
+                      <img class="album-img" th:src="${chart.melonSong.imageUrl}"></img>
+                    </td>
+                    <td class="song-box">
+                      <div class="song-info">
+                        <span class="song-name" th:text="${chart.melonSong.name}">곡 이름</span>
+                        <div class="artists-info">
+                          <div class="artist-name" th:each="artistSongs : ${chart.melonSong.melonArtistSongs}">
+                            <span th:text="${artistSongs.melonArtist.name}">아티스트1</span>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- 지니 차트 -->
+            <div class="col-xl-3 chart-box">
+              <div class="chart-title">
+                <img class="genie-img" th:src="@{/images/genie-logo.png}"></img>
+              </div>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                  <tr class="chart-row" th:each="chart : ${genieCharts}">
+                    <td class="rank-box">
+                      <span class="rank" th:text="${chart.curRank}">1</span>
+                    </td>
+                    <td class="img-box">
+                      <img class="album-img" th:src="${chart.genieSong.imageUrl}"></img>
+                    </td>
+                    <td class="song-box">
+                      <div class="song-info">
+                        <span class="song-name" th:text="${chart.genieSong.name}">곡 이름</span>
+                        <div class="artists-info">
+                          <div class="artist-name" th:each="artistSongs : ${chart.genieSong.genieArtistSongs}">
+                            <span th:text="${artistSongs.genieArtist.name}">아티스트1</span>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- 플로 차트 -->
+            <div class="col-xl-3 chart-box">
+              <div class="chart-title">
+                <img class="flo-img" th:src="@{/images/flo-logo.png}"></img>
+              </div>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                  <tr class="chart-row" th:each="chart : ${floCharts}">
+                    <td class="rank-box">
+                      <span class="rank" th:text="${chart.curRank}">1</span>
+                    </td>
+                    <td class="img-box">
+                      <img class="album-img" th:src="${chart.floSong.imageUrl}"></img>
+                    </td>
+                    <td class="song-box">
+                      <div class="song-info">
+                        <span class="song-name" th:text="${chart.floSong.name}">곡 이름</span>
+                        <div class="artists-info">
+                          <div class="artist-name" th:each="artistSongs : ${chart.floSong.floArtistSongs}">
+                            <span th:text="${artistSongs.floArtist.name}">아티스트1</span>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- 벅스 차트 -->
+            <div class="col-xl-3 chart-box">
+              <div class="chart-title">
+                <img class="bugs-img" th:src="@{/images/bugs-logo.png}"></img>
+              </div>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                  <tr class="chart-row" th:each="chart : ${bugsCharts}">
+                    <td class="rank-box">
+                      <span class="rank" th:text="${chart.curRank}">1</span>
+                    </td>
+                    <td class="img-box">
+                      <img class="album-img" th:src="${chart.bugsSong.imageUrl}"></img>
+                    </td>
+                    <td class="song-box">
+                      <div class="song-info">
+                        <span class="song-name" th:text="${chart.bugsSong.name}">곡 이름</span>
+                        <div class="artists-info">
+                          <div class="artist-name" th:each="artistSongs : ${chart.bugsSong.bugsArtistSongs}">
+                            <span th:text="${artistSongs.bugsArtist.name}">아티스트1</span>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+      function filter() {
+
+        //검색창 입력 키워드 가져오기
+        let search = document.getElementById("search").value.toLowerCase();
+        let chartList = document.getElementsByClassName("chart-row");
+        console.log(search);
+
+        for (let i = 0; i < chartList.length; i++) {
+          check = false;
+
+          //곡 이름에 검색 키워드가 있는지 확인
+          song = chartList[i].getElementsByClassName("song-name");
+          if (song[0].innerHTML.toLowerCase().indexOf(search) != -1) check = true;
+
+          //아티스트 이름에 검색 키워드가 있는지 확인
+          artists = chartList[i].getElementsByClassName("artist-name");
+          for (let j = 0; j < artists.length; j++) {
+            if (artists[j].innerHTML.toLowerCase().indexOf(search) != -1) check = true;
+          }
+
+          //검색 키워드가 있으면 표시, 없으면 미표시
+          if (check == true) chartList[i].style.display = "table-row";
+          else chartList[i].style.display = "none";
+        }
+      }
+
+  </script>
+</body>
+
+</html>

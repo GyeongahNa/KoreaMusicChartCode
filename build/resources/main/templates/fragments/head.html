@@ -1,0 +1,17 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head(title)">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title th:text="${title}">title</title>
+    <link href="sticky-footer-navbar.css" rel="stylesheet" th:href="@{/custom-css/sticky-footer-navbar.css}">
+    <link crossorigin="anonymous" href="/docs/5.2/dist/css/bootstrap.min.css"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" rel="stylesheet"
+          th:href="@{/bootstrap-css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/custom-css/table.css}">
+    <link rel="stylesheet" th:href="@{/custom-css/contents.css}">
+    <link rel="stylesheet" th:href="@{/custom-css/full-bg.css}">
+</head>
+
+</html>
